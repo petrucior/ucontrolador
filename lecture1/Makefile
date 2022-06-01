@@ -24,4 +24,3 @@ clean:
 	rm $(FILENAME).o
 	rm $(FILENAME).elf
 	rm $(FILENAME).hex
-	rm *~

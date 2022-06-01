@@ -17,5 +17,3 @@ brew install avrdude
 ```
 ls /dev/cu.*
 ```
-
-

@@ -1,7 +1,7 @@
 /**
  * \file led.c 
  *
- * \brief This file configures and turn on led according to the press of a button using interrupt.
+ * \brief This file configures and turn on led according to the press of a button without interrupt..
  *
  * \author 
  * Petrucio Ricardo Tavares de Medeiros \n
@@ -12,20 +12,13 @@
  * \version 0.1
  * \date Jun 2022
  */
-#define F_CPU 16000000 UL // Defining clock
+#define F_CPU 16000000UL // Defining clock
 
 #include <avr/io.h> // Including library avr
-#include <avr/interrupt.h> // Including library interrupt
-
-// Extern interrupt function
-ISR( INT0_vect ){
-  PORTC ^= (1 << 2); // Toggle Pin C2
-}
+#include <util/delay.h> // Including library delay
 
 int main( void ){
-
-  cli(); // Disable global interrupt
-
+  
   // Set pin c2 registers as output ( DDRxn --> DDRx )
                       //        7654_3210
   DDRC |= (1 << 2);   // binary xxxx_x1xx
@@ -33,13 +26,16 @@ int main( void ){
   DDRD &= ~(1 << 2);  // binary xxxx_x0xx
   PORTD |= (1 << 2);  // Pull-up on Pin D2
 
-  // Set interrupt
-  EICRA |= (1 << 1); // external interrupt int0 - falling edge
-  EIMSK |= (1 << 0); // Enable external interrupt INT0
-
-  sei(); // Enable global interrupt
-
   // Infinity loop
-  while ( 1 ){;;}
+  while ( 1 ){
+    if (! ( PIND & (1 << 2)) ){
+      PORTC |= (1 << 2);
+    }
+    else {
+      PORTC &= ~(1 << 2);
+    }
+    _delay_ms(100); // 100 ms
+  }
+  
   return 0;
 }

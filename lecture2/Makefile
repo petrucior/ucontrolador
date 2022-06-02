@@ -1,7 +1,7 @@
 #
 # Makefile
 #
-FILENAME   = led
+FILENAME   = led2
 PORT       = /dev/cu.usbserial-A600BOBB
 DEVICE     = atmega328p
 PROGRAMMER = arduino
@@ -9,7 +9,7 @@ PROGRAMMER = arduino
 BAUD       = 57600
 COMPILE    = avr-gcc -Wall -Os -mmcu=$(DEVICE)
 
-default: compile upload clean
+default: compile #upload #clean
 
 compile:
 	$(COMPILE) -c $(FILENAME).c -o $(FILENAME).o

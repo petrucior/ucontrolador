@@ -35,3 +35,6 @@
 - cli(); // Disable all interrupts
 
 ![review](https://i0.wp.com/portal.vidadesilicio.com.br/wp-content/uploads/2017/05/PCINTESQUEMA.png)
+
+## External interrupts
+![externalinterrupts](http://www.ermicro.com/blog/wp-content/uploads/2013/09/motor_cnt15.jpg)

@@ -18,28 +18,32 @@
 #include <avr/interrupt.h> // Including library interrupt
 
 // Extern interrupt function
-ISR( INT0_vect ){
-  PORTC ^= (1 << 2); // Toggle Pin C2
+ISR( TIMER0_OVF_vect ){
+  // 
+  PORTB ^= (1 << 5); // Toggle Pin B5
 }
 
 int main( void ){
 
   cli(); // Disable global interrupt
 
-  // Set pin c2 registers as output ( DDRxn --> DDRx )
+  // Set pin b5 registers as output ( DDRxn --> DDRx )
                       //        7654_3210
-  DDRC |= (1 << 2);   // binary xxxx_x1xx
-  // Set pin d2 register as input ( DDRxn --> DDRx )
-  DDRD &= ~(1 << 2);  // binary xxxx_x0xx
-  PORTD |= (1 << 2);  // Pull-up on Pin D2
+  DDRB |= (1 << 5);   // binary xxxx_x1xx
+  // Cleaning PB5 and enable pull-ups in all pins don't used  
+  PORTB = 0b11011111;
 
-  // Set interrupt
-  EICRA |= (1 << 1); // external interrupt int0 - falling edge
-  EIMSK |= (1 << 0); // Enable external interrupt INT0
+  // Defining normal mode
+  TCCR0A = 0b00000000; // TC0 (normal operating)
+  TCCR0B = 0b00000001; // TC0 without prescaler. Overflow every 16us = 256/16Mhz
+  TIMSK0 = 0b00000001; // Enabling interrupt TC0 
+  
 
   sei(); // Enable global interrupt
 
+  // The program is branched to interrupt at each overflow of TC0
   // Infinity loop
   while ( 1 ){;;}
+  
   return 0;
 }

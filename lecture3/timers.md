@@ -1,40 +1,64 @@
-## Interrupt
-![interruption](https://4.bp.blogspot.com/-vCBigov2SLc/V7YlXikbjaI/AAAAAAAABJY/lRSiYIU59L0rE5-jkhE_w_NfCyecsHuoQCLcB/s1600/Int-fig1.jpg)
+## Timers/Counters
+- Counting peripheral circuits that perform this task (counting) independently of the CPU
+![Timers](https://www.arxterra.com/wp-content/uploads/2018/08/3_AVRcpuBlockDiagram-e1541572879179.jpg)
 
-![priority](https://i.pinimg.com/736x/42/b1/65/42b16572039efbebca0deb8ff7386c84.jpg)
+- Generation of periodic signals/events
+- Event count
+- Capture and compare functions
 
-- Single address for interrupt (vector)
-- Individually enabled/disabled (maskable)
-- Bit 1 of SREG = 0 while interrupt is being handled
-- Bit 1 of SREG = 1 when interrupt ends
+There are 3 timers/counters
+- 8 bits
+  - Calculating range: $[0,(2^{8}-1)]$
+  - Range: $[0,255]$
+- 16 bits 
+  - Calculating range: $[0,(2^{16}-1)]$
+  - Range: $[0, 65535]$ 
 
-## ![PIN CONFIGURATIONS - ATMEGA328p (28-pins)](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf)
+|                                        Timer/Counter 0 (TC0)                                       |                          Timer/Counter 2 (TC2)                          |
+|:--------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------:|
+|                                               8 bits                                               |                     Caracteristicas similares ao TC0                    |
+|                                   Fonte de clock interna/externa                                   | Funçao adicional: contagem precisa de 1s com clock externo de 32,768kHz |
+|                      Divisor de clock para contagem de ate 10 bits (prescaler)                     |               Gerador de 2 sinais PWM (pinos OC0A e OC0B)               |
+|                                    2 comparadores independentes                                    |                                                                         |
+|                             Gerador de 2 sinais PWM (pinos OC0A e OC0B)                            |                                                                         |
+|                                Gerador de frequencia (onda quadrada)                               |                                                                         |
+| 3 fontes independentes de interrupçao: Por estouro (TOV0) e igualdades de comparaçao (OCF0A/OCF0B) |                                                                         |
 
-![pinsatmega](https://microcontrollerslab.com/wp-content/uploads/2019/12/ATMEGA328P-Pin-Configuration-Diagram.png)
 
-![pinout](https://cdn.shopify.com/s/files/1/0452/2564/0087/files/Pinout_of_ARDUINO_Board_and_ATMega328PU_Kobee.png?v=1629648438)
+|                                  Timer/Counter 1 (TC1)                                  |
+|:---------------------------------------------------------------------------------------:|
+|                                         16 bits                                         |
+|                              Fonte de clock interna/externa                             |
+|                Divisor de clock para contagem de ate 10 bits (prescaler)                |
+|                               2 comparadores independentes                              |
+| Gerador de 2 sinais PWM (pinos OC1A e OC1B) com inumeras possibilidades de configuraçao |
+|                          Gerador de frequencia (onda quadrada)                          |
+|      4 fontes independentes de interrupçao: Por estouro e igualdades de comparaçao      |
+|                                                                                         |
 
-## [Interrupt handler functions](https://www.nongnu.org/avr-libc/user-manual/group__avr__interrupts.html)
-![program](https://media-exp1.licdn.com/dms/image/C4D12AQFCa4rh7SZj3g/article-inline_image-shrink_1000_1488/0/1595232397509?e=1658361600&v=beta&t=gmwj9Aotpxvf6xbuocyqFJ-lXqG4BdQ4hM7CA8SgFIo)
 
-![pinout_interrupt](https://i0.wp.com/portal.vidadesilicio.com.br/wp-content/uploads/2017/05/UNOMAP2-1024x614-1024x614.png)
+Modos de Operação
+- Modo normal
+  - O TCn conta continuamente de forma crescente;
+  - A contagem se dá de 0 até $2^{x-1}$ voltando a 0, num ciclo contínuo;
+  - O valor da contagem é armazenado no registrador TCNTn;
+  - Quando a contagem estoura, o bit sinalizador de estouro (TOVn) é setado para 1. Se habilitada, uma interrupção é gerada (TIMERn OVF)
 
-### PCICR (Pin Change Interrupt Control Register): The register is responsible for enabling interrupt on a given PORT when the respective PCIEx bit is set to 1.
-![pcicr](https://i0.wp.com/portal.vidadesilicio.com.br/wp-content/uploads/2017/05/pcicr.png)
+- Modo CTC (Clear Time on Compare)
+  - O contador é zerado quando o valor de TCNTn é igual a OCRnA;
+  - Uma interrupão pode ser gerada cada vez que o contador atinge o valor de comparação (OCRnA/OCRnB);
+  - Permite geração de ondas quadradas nos pinos (OCnA/OCnB)
 
-### PCMSK (Pin Change Mask Register): This register is responsible for enabling the interrupt of a pin on a given PORT. So, there are 3 registers of this type PCMSK0, PCMSK1 and PCMSK2 referring to PORTS B, C and D respectively.
+![timers](http://2.bp.blogspot.com/-W3Ww1bLBt8g/UfayQviq4nI/AAAAAAAACFE/Z5oP4mdIh0M/s640/avr_timer0.png)
 
-![pcmsk0](https://i0.wp.com/portal.vidadesilicio.com.br/wp-content/uploads/2017/05/pcmsk0.png)
+![counter](https://i0.wp.com/embedds.com/wp-content/uploads/2010/12/250_counts_normal_mode.png)
 
-![pcmsk1](https://i0.wp.com/portal.vidadesilicio.com.br/wp-content/uploads/2017/05/pcmks1.png)
+$T_{overflow} = 2^{x-1}/f_{clk} = 2^{x-1} * T_{clk}$
 
-![pcmsk2](https://i0.wp.com/portal.vidadesilicio.com.br/wp-content/uploads/2017/05/pcmsk2.png)
+![counter2](https://www.electronicwings.com/images/user_images/images/ATmega_20160622/ATmega_Comapre(CTC%20mode)/wave%20generation%20normal%20mode1.png)
 
-### SREG – Global Interrupt Flag
-- sei(); // Enable all interrupts
-- cli(); // Disable all interrupts
+$T_{OCRnA} = (OCRnA+1)/f_{clk} = (OCRnA + 1) * T_{clk}$
 
-![review](https://i0.wp.com/portal.vidadesilicio.com.br/wp-content/uploads/2017/05/PCINTESQUEMA.png)
+![prescaler]()
 
-## External interrupts
-![externalinterrupts](http://www.ermicro.com/blog/wp-content/uploads/2013/09/motor_cnt15.jpg)
+## Registers

@@ -59,6 +59,21 @@ $T_{overflow} = 2^{x-1}/f_{clk} = 2^{x-1} * T_{clk}$
 
 $T_{OCRnA} = (OCRnA+1)/f_{clk} = (OCRnA + 1) * T_{clk}$
 
-![prescaler]()
+![prescaler](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/prescaler.png)
 
 ## Registers
+
+- Configurando modo de operação
+![modos](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/modos.png)
+
+- Definindo preescaler
+![pscaler](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/registerprescaler.png)
+
+- Alguns registradores do datapath
+![registersdatapath](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/regsdatapath.png)
+
+- Registradores para interrupções
+![interrupt](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/interrupcoes.png)
+
+- Flags de erros
+![flags](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/flagserrors.png)

@@ -8,7 +8,7 @@
         <li>Binário</li>
         <li>Normalmente o período é fixo;</li>
         <math>
-        Duty cycle = t<sub>high</sub> / t<sub>high</sub> + t<sub>low</sub>
+        Duty cycle (ciclo de trabalho) = t<sub>high</sub> / t<sub>high</sub> + t<sub>low</sub>
         </math>
         <li>Duty cycle variável implica no valor médio variável</li>
       </ul> 

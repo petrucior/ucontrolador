@@ -1,7 +1,7 @@
 /**
- * \file timers.c 
+ * \file timers2.c 
  *
- * \brief This file change the frequency of the signal using prescaler configuration.
+ * \brief This file generates PWM by software using CTC mode
  *
  * \author 
  * Petrucio Ricardo Tavares de Medeiros \n
@@ -34,9 +34,10 @@ int main( void ){
   PORTB = 0b11011111;
 
   // Defining normal mode
-  TCCR0A = 0b00000000; // TC0 (normal operating)
-  TCCR0B = 0b00000001; // TC0 without prescaler. Overflow every 16us = 256/16Mhz
-  TIMSK0 = 0b00000001; // Enabling interrupt TC0 
+  TCCR0A = 0b00000010; // Enabling CTC mode
+  TCCR0B = 0b00000011; // Prescaler = 64
+  OCR0A = 249; // Adjusts the comparator making the TC0 count to 249
+  TIMSK0 = 0b00000010; // Enabling interrupt when counter is equal to OCR0A
   
 
   sei(); // Enable global interrupt

@@ -1,7 +1,7 @@
 #
 # Makefile
 #
-FILENAME   = timers
+FILENAME   = timers2
 PORT       = /dev/cu.usbserial-A600BOBB
 DEVICE     = atmega328p
 PROGRAMMER = arduino

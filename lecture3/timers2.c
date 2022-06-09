@@ -39,10 +39,9 @@ int main( void ){
   OCR0A = 249; // Adjusts the comparator making the TC0 count to 249
   TIMSK0 = 0b00000010; // Enabling interrupt when counter is equal to OCR0A
   
-
   sei(); // Enable global interrupt
 
-  // The program is branched to interrupt at each overflow of TC0
+  // Interruption occurs every 1ms = 249/(16Mhz/64)
   // Infinity loop
   while ( 1 ){;;}
   

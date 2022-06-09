@@ -20,18 +20,18 @@
 // Extern interrupt function
 ISR( TIMER0_OVF_vect ){
   // 
-  PORTB ^= (1 << 5); // Toggle Pin B5
+  PORTD ^= (1 << 5); // Toggle Pin D6
 }
 
 int main( void ){
 
   cli(); // Disable global interrupt
 
-  // Set pin b5 registers as output ( DDRxn --> DDRx )
+  // Set pin D6 registers as output ( DDRxn --> DDRx )
                       //        7654_3210
-  DDRB |= (1 << 5);   // binary xxxx_x1xx
+  DDRD |= (1 << 6);   // binary x1xx_xxxx
   // Cleaning PB5 and enable pull-ups in all pins don't used  
-  PORTB = 0b11011111;
+  PORTD = 0b11011111;
 
   // Defining normal mode
   TCCR0A = 0b00000010; // Enabling CTC mode

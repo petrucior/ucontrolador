@@ -36,6 +36,8 @@ int main( void ){
   // Defining normal mode
   TCCR0A = 0b00000000; // TC0 (normal operating)
   TCCR0B = 0b00000001; // TC0 without prescaler. Overflow every 16us = 256/16Mhz
+  //TCCR0B = 0b00000010; // TC0 with prescaler 8. Overflow every 128us = 256/(16Mhz/8)
+  //TCCR0B = 0b00000011; // TC0 with prescaler 64. Overflow every 1024us = 256/(16Mhz/64)
   TIMSK0 = 0b00000001; // Enabling interrupt TC0 
   
 

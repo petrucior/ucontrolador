@@ -53,3 +53,16 @@
     </td>
   </tr>
 </table>
+
+## Registradores
+- Configurando o modo de operação
+![modo](https://github.com/petrucior/ucontrolador/raw/main/lecture3/midia/modos.png)
+
+- Definindo prescaler
+![prescaler](https://github.com/petrucior/ucontrolador/raw/main/lecture3/midia/registerprescaler.png)
+
+- Alguns registradores do Datapath
+![regdatapath]()
+
+## Pinos capazes de gerar PWM por hardware
+![pinout](https://camo.githubusercontent.com/4a9abc735ac471ba63035f24f465c177ac98fc25822f5d0076df58a096f8c53c/68747470733a2f2f63646e2e73686f706966792e636f6d2f732f66696c65732f312f303435322f323536342f303038372f66696c65732f50696e6f75745f6f665f41524455494e4f5f426f6172645f616e645f41544d65676133323850555f4b6f6265652e706e673f763d31363239363438343338)

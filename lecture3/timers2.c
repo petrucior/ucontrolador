@@ -31,7 +31,7 @@ int main( void ){
                       //        7654_3210
   DDRD |= (1 << 6);   // binary x1xx_xxxx
   // Cleaning PB5 and enable pull-ups in all pins don't used  
-  PORTD = 0b11011111;
+  PORTD = 0b10111111;
 
   // Defining normal mode
   TCCR0A = 0b00000010; // Enabling CTC mode

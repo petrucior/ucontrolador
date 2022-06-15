@@ -24,8 +24,8 @@ void usartInit( unsigned int ubrr ){
   // Adjusting baud rate
   UBRR0H = (unsigned char)(ubrr >> 8);
   UBRR0L = (unsigned char)(ubrr);
-  // Enabling transmitter and receiver
-  UCSR0B = (1 << RXEN0) | (1 << TXEN0);
+  // Enabling interrupt, transmitter and receiver
+  UCSR0B = /*(1 << RXCIE0) |*/ (1 << RXEN0) | (1 << TXEN0);
   // Adjusting format frame ( data (8 bits) and 2 stops )
   UCSR0C = (1 << USBS0) | (3 << UCSZ00);
 }

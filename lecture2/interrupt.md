@@ -37,4 +37,6 @@
 ![review](https://i0.wp.com/portal.vidadesilicio.com.br/wp-content/uploads/2017/05/PCINTESQUEMA.png)
 
 ## External interrupts
+![INT0_1](https://startingelectronics.org/tutorials/AVR-8-microcontrollers/ATtiny2313-tutorial/P5-pin-alternate-functions/ATtiny2313-int0-int1.png)
+
 ![externalinterrupts](http://www.ermicro.com/blog/wp-content/uploads/2013/09/motor_cnt15.jpg)

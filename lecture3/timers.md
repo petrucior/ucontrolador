@@ -40,9 +40,16 @@ There are 3 timers/counters
 Modos de Operação
 - Modo normal
   - O TCn conta continuamente de forma crescente;
-  - A contagem se dá de 0 até $(2^{x}-1)$ voltando a 0, num ciclo contínuo;
+  - A contagem se dá de 0 até $(2^{x-1})$ voltando a 0, num ciclo contínuo;
   - O valor da contagem é armazenado no registrador TCNTn;
   - Quando a contagem estoura, o bit sinalizador de estouro (TOVn) é setado para 1. Se habilitada, uma interrupção é gerada (TIMERn OVF)
+
+<p float="left">
+  <img src="https://im2.ezgif.com/tmp/ezgif-2-c644230bcd.png" width="50%" />
+  <img src="https://user-images.githubusercontent.com/3810960/201368641-8922d0b8-a877-45b8-bbc6-1c0044385f0c.png" width="40%" /> 
+</p>
+
+$T_{overflow} = (2^{x})/f_{clk} = (2^{x}) * T_{clk}$
 
 - Modo CTC (Clear Time on Compare)
   - O contador é zerado quando o valor de TCNTn é igual a OCRnA;

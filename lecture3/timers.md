@@ -56,15 +56,14 @@ $T_{overflow} = (2^{x})/f_{clk} = (2^{x}) * T_{clk}$
   - Uma interrupão pode ser gerada cada vez que o contador atinge o valor de comparação (OCRnA/OCRnB);
   - Permite geração de ondas quadradas nos pinos (OCnA/OCnB)
 
-![timers](http://2.bp.blogspot.com/-W3Ww1bLBt8g/UfayQviq4nI/AAAAAAAACFE/Z5oP4mdIh0M/s640/avr_timer0.png)
-
-![counter](https://i0.wp.com/embedds.com/wp-content/uploads/2010/12/250_counts_normal_mode.png)
-
-$T_{overflow} = (2^{x})/f_{clk} = (2^{x}) * T_{clk}$
-
-![counter2](https://www.electronicwings.com/images/user_images/images/ATmega_20160622/ATmega_Comapre(CTC%20mode)/wave%20generation%20normal%20mode1.png)
+<p float="left">
+  <img src="http://2.bp.blogspot.com/-W3Ww1bLBt8g/UfayQviq4nI/AAAAAAAACFE/Z5oP4mdIh0M/s640/avr_timer0.png" width="50%" />
+  <img src="https://www.electronicwings.com/storage/PlatformSection/TopicContent/56/description/wave%20generation%20CTC2%20mode.png" width="40%" /> 
+</p>
 
 $T_{OCRnA} = (OCRnA+1)/f_{clk} = (OCRnA + 1) * T_{clk}$
+
+![counters](https://reso-nance.org/wiki/lib/exe/fetch.php?tok=aebab0&media=http%3A%2F%2Farcfn.com%2Fimages%2Fpwm2.gif)
 
 ![prescaler](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/prescaler.png)
 

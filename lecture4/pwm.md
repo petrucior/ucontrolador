@@ -48,7 +48,7 @@
         <li><b>Saída invertida</b>: O pino OCnA/B é ativado na igualdade entre o TCNTn e OCRnA/B, e zerado no valor mínimo do contador;</li>
         <li> <math>T<sub>PWM</sub> = (2<sup>x</sup>) * prescaler * T<sub>clk</sub></math> </li>
         <li> <math>f<sub>PWM</sub> = f<sub>clk</sub> / (2<sup>x</sup>) * prescaler </math> </li>
-        <li> $\text{Prescaler} = {1, 8, 64, 256, 1024} $ </li>
+        <li> <math> <b>Prescaler</b> = {1, 8, 64, 256, 1024} </math> </li>
       </ul>
     </td>
   </tr>

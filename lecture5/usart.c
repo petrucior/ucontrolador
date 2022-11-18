@@ -25,7 +25,7 @@ void usartInit( unsigned int ubrr ){
   UBRR0H = (unsigned char)(ubrr >> 8);
   UBRR0L = (unsigned char)(ubrr);
   // Enabling interrupt, transmitter and receiver
-  UCSR0B = /*(1 << RXCIE0) |*/ (1 << RXEN0) | (1 << TXEN0);
+  UCSR0B = (1 << RXCIE0) | (1 << RXEN0) | (1 << TXEN0);
   // Adjusting format frame ( data (8 bits) and 2 stops )
   UCSR0C = (1 << USBS0) | (3 << UCSZ00);
 }
@@ -45,12 +45,11 @@ unsigned char usartReceive( void ){
 }
 
 // USART Interrupt
-/*
 ISR( USART_RX_vect ){
   // Sending the received data
   usartSend( usartReceive() );
 }
-*/
+
 
 int main( void ){
 
@@ -58,11 +57,11 @@ int main( void ){
   usartInit( _UBRR );
 
   // Enabling interrupt
-  //sei();
+  sei();
   
   // Infinity loop
   while ( 1 ){
-     
+    /* 
     usartSend('u');
     _delay_ms(200);
     usartSend('s');
@@ -75,7 +74,7 @@ int main( void ){
     _delay_ms(200);
     usartSend(' ');
     _delay_ms(200);
-    
+    */
     
     //usartSend( usartReceive() );
   }

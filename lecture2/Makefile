@@ -1,7 +1,7 @@
 #
 # Makefile
 #
-FILENAME   = led2
+FILENAME   = led
 PORT       = /dev/cu.usbserial-A600BOBB
 DEVICE     = atmega328p
 PROGRAMMER = arduino

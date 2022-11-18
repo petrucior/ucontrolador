@@ -1,7 +1,7 @@
 #
 # Makefile
 #
-FILENAME   = pwm2
+FILENAME   = pwm
 PORT       = /dev/cu.usbserial-A600BOBB
 DEVICE     = atmega328p
 PROGRAMMER = arduino

@@ -45,7 +45,7 @@ Modos de Operação
   - Quando a contagem estoura, o bit sinalizador de estouro (TOVn) é setado para 1. Se habilitada, uma interrupção é gerada (TIMERn OVF)
 
 <p float="left">
-  <img src="https://im2.ezgif.com/tmp/ezgif-2-c644230bcd.png" width="50%" />
+  <img src="https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/normalmodeoperating.png?raw=true" width="50%" />
   <img src="https://user-images.githubusercontent.com/3810960/201368641-8922d0b8-a877-45b8-bbc6-1c0044385f0c.png" width="40%" /> 
 </p>
 
@@ -58,7 +58,7 @@ $T_{overflow} = (2^{x})/f_{clk} = (2^{x}) * T_{clk}$
 
 <p float="left">
   <img src="http://2.bp.blogspot.com/-W3Ww1bLBt8g/UfayQviq4nI/AAAAAAAACFE/Z5oP4mdIh0M/s640/avr_timer0.png" width="50%" />
-  <img src="https://www.electronicwings.com/storage/PlatformSection/TopicContent/56/description/wave%20generation%20CTC2%20mode.png" width="40%" /> 
+  <img src="https://www.electronicwings.com/storage/PlatformSection/TopicContent/56/description/wave%20generation%20normal%20mode1.png" width="40%" /> 
 </p>
 
 $T_{OCRnA} = (OCRnA+1)/f_{clk} = (OCRnA + 1) * T_{clk}$

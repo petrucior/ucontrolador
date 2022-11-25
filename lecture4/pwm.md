@@ -58,6 +58,8 @@
 - Configurando o modo de operação
 ![modo](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/modos.png?raw=true)
 
+![modos](https://www.arxterra.com/wp-content/uploads/2018/05/arduino_128.png)
+
 - Definindo prescaler
 ![prescaler](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/registerprescaler.png?raw=true)
 

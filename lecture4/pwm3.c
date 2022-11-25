@@ -40,6 +40,8 @@ int main( void ){
   // Infinity loop
   while ( 1 ){
 
+    // Servo rotating between -90 and 90 degrees
+
     /*
     for (uint16_t i = 2000; i <= 4000; i+=100){
       OCR1A = i;

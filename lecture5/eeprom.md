@@ -39,10 +39,10 @@
 
 ## Registradores
 - Registrador de endereços da memória EEPROM - varia linearmente entre $[0,1023]$
-![enderecos](https://github.com/petrucior/ucontrolador/blob/main/lecture5/midia/dados.png?raw=true)
-
-- Registrador de dados: contém o dado a ser escrito/lido em uma operação de **write**/**read**. 
 ![prescaler](https://github.com/petrucior/ucontrolador/blob/main/lecture5/midia/enderecos.png?raw=true)
+
+- Registrador de dados: contém o dado a ser escrito/lido em uma operação de **write**/**read**.
+![enderecos](https://github.com/petrucior/ucontrolador/blob/main/lecture5/midia/dados.png?raw=true)
 
 - Registrador de controle de como acontece a escrita, interrupção e flags para habilitar/desabilitar a escrita/leitura.
 ![controle](https://github.com/petrucior/ucontrolador/blob/main/lecture5/midia/controle.png?raw=true)

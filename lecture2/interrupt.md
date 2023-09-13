@@ -15,7 +15,16 @@
 ![pinout](https://cdn.shopify.com/s/files/1/0452/2564/0087/files/Pinout_of_ARDUINO_Board_and_ATMega328PU_Kobee.png?v=1629648438)
 
 ## [Interrupt handler functions](https://www.nongnu.org/avr-libc/user-manual/group__avr__interrupts.html)
-![program](https://media-exp1.licdn.com/dms/image/C4D12AQFCa4rh7SZj3g/article-inline_image-shrink_1000_1488/0/1595232397509?e=1658361600&v=beta&t=gmwj9Aotpxvf6xbuocyqFJ-lXqG4BdQ4hM7CA8SgFIo)
+
+### Interrupções Externas
+
+| **Endereço** 	| **Fonte** 	|    **Definição de Interrupção**   	|                 **Descrição**                 	|
+|:------------:	|:---------:	|:---------------------------------:	|:---------------------------------------------:	|
+|     0x01     	|    INT0   	|       Interrupção Externa 0       	|      Subida, descida ou nivel do pino PD2     	|
+|     0x02     	|    INT1   	|       Interrupção Externa 1       	|      Subida, descida ou nivel do pino PD3     	|
+|     0x03     	|   PCINT0  	| Interrupção 0 por mudança de pino 	| Mudança de estado em qualquer pino da porta B 	|
+|     0x04     	|   PCINT1  	| Interrupção 1 por mudança de pino 	| Mudança de estado em qualquer pino da porta C 	|
+|     0x05     	|   PCINT2  	| Interrupção 2 por mudança de pino 	| Mudança de estado em qualquer pino da porta D 	|
 
 ![pinout_interrupt](https://i0.wp.com/portal.vidadesilicio.com.br/wp-content/uploads/2017/05/UNOMAP2-1024x614-1024x614.png)
 

@@ -132,14 +132,14 @@ Appendix
 1 << 7 ---> 1000_0000  // 128    80
 ```
 
-## ![PIN CONFIGURATIONS - ATMEGA328p (28-pins)](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf)
+## [PIN CONFIGURATIONS - ATMEGA328p (28-pins)](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf)
 
 ![pinsatmega](https://microcontrollerslab.com/wp-content/uploads/2019/12/ATMEGA328P-Pin-Configuration-Diagram.png)
 
 ![pinschematics](https://i.stack.imgur.com/mIA54.png)
 
 ![pinregister](https://www.arnabkumardas.com/blog/wp-content/uploads/2018/12/image-1.png)
-1. DDxn
+1. DDRxn
    - The DDxn bit in the DDRx register selects the direction of this pin. If DDxn is written logic one, Pxn is configured as an output
 pin. If DDxn is written logic zero, Pxn is configured as an input pin.
 2. PORTxn
@@ -147,8 +147,8 @@ pin. If DDxn is written logic zero, Pxn is configured as an input pin.
 pull-up resistor off, PORTxn has to be written logic zero or the pin has to be configured as an output pin.
    - If PORTxn is written logic one when the pin is configured as an output pin, the port pin is driven high (one). If PORTxn is
 written logic zero when the pin is configured as an output pin, the port pin is driven low (zero).
-3. PINxn
-   - Writing a logic one to PINxn toggles the value of PORTxn, independent on the value of DDRxn.
+3. PINx
+   - This register is used to read the data from the port pins. Before reading the data from the port pins, the ports needs to be configured as Inputs. 
 
 ![registers](https://www.arxterra.com/wp-content/uploads/2018/08/EE444-Lecture-3-IO-port-pin-configurations.jpg)
 

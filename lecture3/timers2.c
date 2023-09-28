@@ -20,7 +20,7 @@
 // Extern interrupt function
 ISR( TIMER0_OVF_vect ){
   // 
-  PORTD ^= (1 << 5); // Toggle Pin D6
+  PORTD ^= (1 << 6); // Toggle Pin D6
 }
 
 int main( void ){

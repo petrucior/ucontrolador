@@ -34,7 +34,7 @@ int main( void ){
   PORTD = 0b10111111;
 
   // Defining normal mode
-  TCCR0A = 0b00000010; // Enabling CTC mode
+  TCCR0A = 0b01000010; // Enabling CTC mode
   TCCR0B = 0b00000011; // Prescaler = 64
   OCR0A = 249; // Adjusts the comparator making the TC0 count to 249
   TIMSK0 = 0b00000010; // Enabling interrupt when counter is equal to OCR0A

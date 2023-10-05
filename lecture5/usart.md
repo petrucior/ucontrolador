@@ -63,7 +63,7 @@
 
 ## Taxa de Transmissão
 Baud Rate: A taxa de transmissão deve ser a mesma no transmissor e no receptor
-![taxa](https://aws1.discourse-cdn.com/arduino/optimized/4X/1/0/e/10ead4311d296577cd162b9498c047df7574364f_2_690x273.png)
+![taxa](https://europe1.discourse-cdn.com/arduino/original/4X/f/d/9/fd97e80c68e2ae415c1c6833d168be357322499e.png)
 
 ## Diagrama de Blocos
 ![diagrama](https://nikharris.com/content/images/2015/08/Screenshot-from-2015-08-08-15-57-18.png)

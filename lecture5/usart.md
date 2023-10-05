@@ -45,6 +45,7 @@
 </table>
 
 ## Exemplos
+- Observação: O pacote envia os bits menos significativo primeiro
 ![exemplos](https://github.com/petrucior/ucontrolador/blob/main/lecture5/midia/exemplos.png?raw=true)
 
 ## USART no Atmega328p

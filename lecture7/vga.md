@@ -94,3 +94,5 @@ Ex: 0.7V intensidade máxima da cor e 0V intensidade mínima.
 
 **Exemplo:** os 3 pinos em 0.7V produzem pixels brancos, pois a somatória das cores vermelho, verde e azul produz a cor branca. E, se os 3 estiverem em 0V, a cor resultante será preto (ausência das três cores). As demais combinações formam outras cores (amarelo, laranja, cinza etc).
 
+## Esquemático
+![esquema](https://mundoprojetado.com.br/wp-content/uploads/2019/10/Circuito-Arduino-com-VGA-1024x756.jpg)

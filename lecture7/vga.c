@@ -62,7 +62,7 @@ int main( void ){
   // Configura o timer 1 com prescaler de 1024, no modo fast PWM
   TCCR1A = _BV(WGM10) | _BV(WGM11) | _BV(COM1B1);
   TCCR1B = _BV(WGM12) | _BV(WGM13) | _BV(CS12) | _BV(CS10);
-  OCR1A = 259; // Período de 16,64‬ms
+  OCR1A = 259; // Período de 16,64ms
   OCR1B = 0; // Largura de 64us (2 linhas)
   TIMSK1 = _BV(TOIE1); // Habilita interrupção por estouro
 

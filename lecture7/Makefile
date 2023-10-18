@@ -1,7 +1,7 @@
 #
 # Makefile
 #
-FILENAME   = eeprom
+FILENAME   = vga
 PORT       = /dev/cu.usbserial-A600BOBB
 DEVICE     = atmega328p
 PROGRAMMER = arduino

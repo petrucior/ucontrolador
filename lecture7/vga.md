@@ -1,77 +1,96 @@
-## EEPROM (Electrically-Erasable Programmable Read-Only Memory)
+## VGA (Video Graphics Array)
 
  <table style="float:right">
   <tr>
     <td>
       <ul>
-        <li>Memória não volátil;</li>
-        <li>Escrita e Leitura</li>
-        <li>Número limitado de operações de escrita;</li>
-        <li>Normalmente usado para armazenar configurações</li>
+        <li>Padrão de vídeo;</li>
+        <li>Comunicação entre PC e monitor</li>
+        <li>Padrão VGA é de 640×480</li>
+       <li>Modos de cores: 16 ou 256 cores</li>
       </ul> 
     </td>
     <td>
      <figure>
-     <img src="https://http2.mlstatic.com/D_NQ_NP_779811-MLB43560663837_092020-O.webp" alt="signal" width="100%" height="100%" style="vertical-align:middle">
-     <figcaption>Chip EEPROM I2C - 256 kbits.</figcaption>
+     <img src="https://i.gifer.com/origin/51/5129a4019d06ed1eeb0600b9f0c9ffd4_w200.gif" alt="signal" width="100%" height="100%" style="vertical-align:middle">
+      </figure>
+    </td>
+    <td>
+     <figure>
+     <img src="https://ae01.alicdn.com/kf/S6eb42a164125461a8f3ef9fe2702152eW/DB15-Fio-De-Solda-Tipo-Adaptador-VGA-15-Furo-Pin-3-Linhas-Macho-e-F-mea.jpg" alt="signal" width="50%" height="50%" style="vertical-align:middle">
       </figure>
     </td>
   </tr>
 </table> 
 
-## Periférico EEPROM no Atmega328p
+## Funcionamento
+![funcionamento](https://embarcados.com.br/wp-content/uploads/2015/10/controlador-vga-varredura-quadro-vga.png)
+
+## Sincronismo vertical
 <table style="float:right">
   <tr>
     <td>
-     <img src="https://www.arnabkumardas.com/blog/wp-content/uploads/2021/04/avrbus.png" alt="signal" width="100%" height="100%" style="vertical-align:middle">
+     <img src="https://mundoprojetado.com.br/wp-content/uploads/2019/10/VGA-sincronismo-vertical.png" alt="signal" width="100%" height="100%" style="vertical-align:middle">
    </td>
    <td>
       <ul>
-        <li>Armazenamento de 1Kbyte;</li>
-        <li>Escrita/Leitura de bytes individuais;</li>
-        <li>100000 ciclos de escrita;</li>
-        <li>Garantir a tensão mínima de escrita para evitar corrupção dos dados</li>
-      </ul>
+        <li>Taxa de atualização de monitor: 60Hz;</li>
+        <li>Atualização de 16,67ms (1/60)</li>
+      </ul> 
     </td>
   </tr>
 </table>
 
+## Sincronismo horizontal
+<table style="float:right">
+  <tr>
+    <td>
+     <img src="https://mundoprojetado.com.br/wp-content/uploads/2019/10/VGA-sincronismo-horizontal.png" alt="signal" width="100%" height="100%" style="vertical-align:middle">
+   </td>
+   <td>
+      <ul>
+        <li>Deve repetir a cada linha;</li>
+        <li>Deve possuir uma largura equivalente ao tempo para “escrever” 96 pixels</li>
+      </ul> 
+    </td>
+  </tr>
+</table>
 
-## Registradores
-- Registrador de endereços da memória EEPROM - varia linearmente entre $[0,1023]$
-![prescaler](https://github.com/petrucior/ucontrolador/blob/main/lecture5/midia/enderecos.png?raw=true)
+## Estrutura do Vídeo
+<table style="float:right">
+  <tr>
+   <td>
+      <ul>
+        <li>Back porch e Front porch serviam para atrasar o vídeo em monitores antigos;</li>
+        <li>Informação enviada 800×525 (colunas x linhas);</li>
+        <li>Tempo de linha: 16,67 ms / 525 = 31,75us;</li>
+        <li>Tempo de cada pixel: 16,67 ms / (800 x 525) = 39,68ns;</li>
+        <li>Exige um clock mínimo de 25,2MHz;</li>
+      </ul> 
+    </td>
+    <td>
+     <img src="https://mundoprojetado.com.br/wp-content/uploads/2019/10/VGA-Diagrama-de-pixelss-1024x697.png" alt="signal" width="50%" height="50%" style="vertical-align:middle">
+   </td>
+  </tr>
+</table>
 
-- Registrador de dados: contém o dado a ser escrito/lido em uma operação de **write**/**read**.
-![enderecos](https://github.com/petrucior/ucontrolador/blob/main/lecture5/midia/dados.png?raw=true)
 
-- Registrador de controle de como acontece a escrita, interrupção e flags para habilitar/desabilitar a escrita/leitura.
-![controle](https://github.com/petrucior/ucontrolador/blob/main/lecture5/midia/controle.png?raw=true)
+## VGA Pinout
+<table style="float:right">
+  <tr>
+    <td>
+     <img src="https://www.clubedohardware.com.br/uploads/attachments/monthly_03_2014/post-684451-0-48342800-1395974448_thumb.gif" alt="signal" width="100%" height="100%" style="vertical-align:middle">
+   </td>
+  </tr>
+</table>
 
-## [EEPROM Library](https://www.nongnu.org/avr-libc/user-manual/group__avr__eeprom.html)
+## Canais de Cores
+Os 3 primeiros pinos servem para definir a cor de um pixel, sendo o primeiro responsável pela cor vermelha, o segundo pela verde e o terceiro pela azul (RGB). Estes devem receber tensões de 0 a 0,7V. E, a cor reproduzida no pixel será conforme:
 
-```c
-void eepromWrite( unsigned int uiAddress, unsigned char ucData ){
- /* Wait for completion of previous write */
- while (EECR & (1 << EEPE));
- /* Set up address and Data Registers */
- EEAR = uiAddress;
- EEDR = ucData;
- /* Write logical one to EEMPE - Master Write Enable */
- EECR |= (1 << EEMPE);
- /* Start eeprom write by setting EEPE - Write Enable */
- EECR |= (1 << EEPE);
-}
-```
+- A intensidade da tensão, nos pinos.
+Ex: 0.7V intensidade máxima da cor e 0V intensidade mínima.
 
-```c
-unsigned char eepromRead( unsigned int uiAddress ){
- /* Wait for completion of previous write */
- while (EECR & (1 << EEPE));
- /* Set up address register */
- EEAR = uiAddress;
- /* Start eeprom read by writing EERE */
- EECR |= (1 << EERE);
- /* Return data from Data Register */
- return EEDR;
-}
-```
+- Somatória das cores nos três canais.
+
+**Exemplo:** os 3 pinos em 0.7V produzem pixels brancos, pois a somatória das cores vermelho, verde e azul produz a cor branca. E, se os 3 estiverem em 0V, a cor resultante será preto (ausência das três cores). As demais combinações formam outras cores (amarelo, laranja, cinza etc).
+

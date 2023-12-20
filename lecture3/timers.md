@@ -58,7 +58,8 @@ $T_{overflow} = (2^{x})/f_{clk} = (2^{x}) * T_{clk}$
 
 <p float="left">
   <img src="http://2.bp.blogspot.com/-W3Ww1bLBt8g/UfayQviq4nI/AAAAAAAACFE/Z5oP4mdIh0M/s640/avr_timer0.png" width="50%" />
-  <img src="https://www.electronicwings.com/storage/PlatformSection/TopicContent/56/description/wave%20generation%20normal%20mode1.png" width="40%" /> 
+  <!--img src="https://www.electronicwings.com/storage/PlatformSection/TopicContent/56/description/wave%20generation%20normal%20mode1.png" width="40%" /-->
+  <img src="https://garretlab.web.fc2.com/en/arduino/inside/hardware/arduino/avr/cores/arduino/wiring_analog.c/fast_pwm1.en.png" width="40%"/>
 </p>
 
 $T_{OCRnA} = (OCRnA+1)/f_{clk} = (OCRnA + 1) * T_{clk}$

@@ -150,5 +150,5 @@ written logic zero when the pin is configured as an output pin, the port pin is 
 3. PINx
    - This register is used to read the data from the port pins. Before reading the data from the port pins, the ports needs to be configured as Inputs. 
 
-![registers](https://www.arxterra.com/wp-content/uploads/2018/08/EE444-Lecture-3-IO-port-pin-configurations.jpg)
+<!-- ![registers](https://www.arxterra.com/wp-content/uploads/2018/08/EE444-Lecture-3-IO-port-pin-configurations.jpg) -->
 

@@ -196,7 +196,6 @@
 ![pinout_interrupt](https://i0.wp.com/portal.vidadesilicio.com.br/wp-content/uploads/2017/05/UNOMAP2-1024x614-1024x614.png)
 
 ### PCICR (Pin Change Interrupt Control Register): The register is responsible for enabling interrupt on a given PORT when the respective PCIEx bit is set to 1.
-- PCINT0 (port B), PCINT1 (port C) e PCINT2 (port D)
 ![pcicr](https://i0.wp.com/portal.vidadesilicio.com.br/wp-content/uploads/2017/05/pcicr.png)
 
 ### PCMSK (Pin Change Mask Register): This register is responsible for enabling the interrupt of a pin on a given PORT. So, there are 3 registers of this type PCMSK0, PCMSK1 and PCMSK2 referring to PORTS B, C and D respectively.

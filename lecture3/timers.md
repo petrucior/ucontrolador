@@ -65,7 +65,7 @@ $T_{overflow} = (2^{x})/f_{clk} = (2^{x}) * T_{clk}$
 
 $T_{OCRnA} = (OCRnA+1)/f_{clk} = (OCRnA + 1) * T_{clk}$
 
-![counters](https://reso-nance.org/wiki/lib/exe/fetch.php?tok=aebab0&media=http%3A%2F%2Farcfn.com%2Fimages%2Fpwm2.gif)
+<!-- ![counters](https://reso-nance.org/wiki/lib/exe/fetch.php?tok=aebab0&media=http%3A%2F%2Farcfn.com%2Fimages%2Fpwm2.gif) -->
 
 ![prescaler](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/prescaler.png)
 

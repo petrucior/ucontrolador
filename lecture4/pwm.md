@@ -23,7 +23,7 @@
 <table style="float:right">
   <tr>
     <td>
-     <img src="https://camo.githubusercontent.com/af981948d8175551de6fa5fd964931c54f266f4a67a33f7a56247428bead7972/687474703a2f2f322e62702e626c6f6773706f742e636f6d2f2d5733577731624c427438672f5566617951766971346e492f41414141414141414346452f5a356f50346d644968304d2f733634302f6176725f74696d6572302e706e67" alt="signal" width="100%" height="100%" style="vertical-align:middle">
+     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiU2S4JqB4NH_HpJ_yAoV54W4Gx7bHmvx5dVqaPvyWLoYrDGTOaDezWeToiUx3QiziC5_r_FxA1Prxcee0dFBLKeli2dvOw-8XMn2RM7McwpyTR1mvk38bfxvCYGqeMjRmEWjPMfRQSRUY/s1600/12.png" alt="signal" width="100%" height="100%" style="vertical-align:middle">
    </td>
    <td>
       <ul>
@@ -31,7 +31,7 @@
         <li>A contagem se dá de 0 até $2^{x}-1$ voltando a 0, num ciclo contínuo;</li>
         <li>O valor da contagem é armazenado no registrador TCNTn;</li>
       </ul>
-     <img src="https://camo.githubusercontent.com/22816112a3b1c144d471747e54f15c68fb81060fad753ed5a719693f8e452d20/68747470733a2f2f69302e77702e636f6d2f656d62656464732e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031302f31322f3235305f636f756e74735f6e6f726d616c5f6d6f64652e706e67" alt="signal" width="100%" height="100%" style="vertical-align:middle">
+     <img src="https://www.electronicwings.com/storage/PlatformSection/TopicContent/55/description/timer%20value.png" alt="signal" width="50%" height="50%" style="vertical-align:middle">
     </td>
   </tr>
 </table>

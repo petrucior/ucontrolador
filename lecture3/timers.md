@@ -232,11 +232,117 @@ $T_{OCRnA} = (OCRnA+1)/f_{clk} = (OCRnA + 1) * T_{clk}$
 
 <!-- ![modos](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/modos.png) -->
 
-- Definindo preescaler
-![pscaler](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/registerprescaler.png)
+<h3 id="timers">Timer/Counter Control n Register B (TCCRnB)</h3>
+- Definir preescaler
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: left">7 bit</th>
+      <th style="text-align: left">6 bit</th>
+      <th style="text-align: left">5 bit</th>
+      <th style="text-align: left">4 bit</th>
+      <th style="text-align: left">3 bit</th>
+      <th style="text-align: left">2 bit</th>
+      <th style="text-align: left">1 bit</th>
+      <th style="text-align: left">0 bit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">TCCR0B</td>
+      <td style="text-align: left">FOC0A</td>
+      <td style="text-align: left">FOC0B</td>
+      <td style="text-align: left">-</td>
+      <td style="text-align: left">-</td>
+      <td style="text-align: left">WGM02</td>
+      <td style="text-align: left">CS02</td>
+      <td style="text-align: left">CS01</td>
+      <td style="text-align: left">CS00</td>
+    </tr>
+  </tbody>
+</table>
 
-- Alguns registradores do datapath
-![registersdatapath](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/regsdatapath.png)
+**Bits 7:6 – FOC0A:B – Force Output Compare A e B**
+- Estes bits são ativos somente para os modos não-PWM. Quando em 1, uma
+comparação é forçada no módulo gerador de onda.
+
+<table><thead>
+  <tr>
+    <th colspan="4">Seleção do CLOCK para o TC0</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>CS02</td>
+    <td>CS01</td>
+    <td>CS00</td>
+    <td>Descrição</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>Sem fonte de clock (TC0 parado)</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td>clock/1 (prescaler=1) - sem prescaler</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>clock/8 (prescaler = 8)</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td>
+    <td>clock/64 (prescaler = 64)</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>clock/256 (prescaler = 256)</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>clock/1024 (prescaler = 1024)</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>clock externo no pino T0. Contagem<br>na borda de descida.</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>clock externo no pino T0. Contagem<br>na borda de subida.</td>
+  </tr>
+</tbody></table>
+
+<!-- ![pscaler](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/registerprescaler.png) -->
+
+- Alguns registradores dos contadores
+<!-- ![registersdatapath](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/regsdatapath.png)-->
+
+**TCNT0 – Timer/Counter 0 Register**
+- Registrador de 8 bits onde é realizada a contagem do TC0, pode ser lido ou escrito a qualquer tempo.
+
+**OCR0A – Output Compare 0 Register A**
+- Registrador de comparação A de 8 bits, possui o valor que é continuamente comparado com o valor do contador (TCNT0). A igualdade pode ser utilizada
+para gerar uma interrupção ou uma forma de onda no pino OC0A.
+
+**OCR0B – Output Compare 0 Register B**
+- Registrador de comparação B de 8 bits, possui o valor que é continuamente comparado com o valor do contador (TCNT0). A igualdade pode ser utilizada para
+gerar uma interrupção ou uma forma de onda no pino OC0B.
 
 - Registradores para interrupções
 ![interrupt](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/interrupcoes.png)

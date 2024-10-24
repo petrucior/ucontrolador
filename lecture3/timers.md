@@ -330,7 +330,7 @@ comparação é forçada no módulo gerador de onda.
 
 <!-- ![pscaler](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/registerprescaler.png) -->
 
-- Alguns registradores dos contadores
+### Alguns registradores dos contadores
 <!-- ![registersdatapath](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/regsdatapath.png)-->
 
 **TCNT0 – Timer/Counter 0 Register**
@@ -344,8 +344,88 @@ para gerar uma interrupção ou uma forma de onda no pino OC0A.
 - Registrador de comparação B de 8 bits, possui o valor que é continuamente comparado com o valor do contador (TCNT0). A igualdade pode ser utilizada para
 gerar uma interrupção ou uma forma de onda no pino OC0B.
 
-- Registradores para interrupções
-![interrupt](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/interrupcoes.png)
+### Registradores para interrupções
 
-- Flags de erros
-![flags](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/flagserrors.png)
+<h3 id="timers">Timer/Counter 0 Interrupt Mask Register (TIMSK0)</h3>
+- Definir interrupções
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: left">7 bit</th>
+      <th style="text-align: left">6 bit</th>
+      <th style="text-align: left">5 bit</th>
+      <th style="text-align: left">4 bit</th>
+      <th style="text-align: left">3 bit</th>
+      <th style="text-align: left">2 bit</th>
+      <th style="text-align: left">1 bit</th>
+      <th style="text-align: left">0 bit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">TIMSK0</td>
+      <td style="text-align: left">-</td>
+      <td style="text-align: left">-</td>
+      <td style="text-align: left">-</td>
+      <td style="text-align: left">-</td>
+      <td style="text-align: left">-</td>
+      <td style="text-align: left">OCIE0B</td>
+      <td style="text-align: left">OCIE0A</td>
+      <td style="text-align: left">TOIE0</td>
+    </tr>
+  </tbody>
+</table>
+
+**Bit 2 – OCIE0B – Timer/Counter 0 Output Compare Match B Interrupt Enable**
+- A escrita 1 neste bit ativa a interrupção do TC0 na igualdade de comparação com o registrador OCR0B.
+
+**Bit 1 – OCIE0A – Timer/Counter 0 Output Compare Match A Interrupt Enable**
+- A escrita 1 neste bit ativa a interrupção do TC0 na igualdade de comparação com o registrador OCR0A.
+
+**Bit 0 – TOIE0 – Timer/Counter 0 Overflow Interrupt Enable**
+- A escrita 1 neste bit ativa a interrupção por estouro do TC0.
+  
+<!-- ![interrupt](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/interrupcoes.png) -->
+
+### Flags de erros
+<!-- ![flags](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/flagserrors.png) -->
+
+<h3 id="timers">Timer/Counter 0 Interrupt Flag Register (TIFR0)</h3>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: left">7 bit</th>
+      <th style="text-align: left">6 bit</th>
+      <th style="text-align: left">5 bit</th>
+      <th style="text-align: left">4 bit</th>
+      <th style="text-align: left">3 bit</th>
+      <th style="text-align: left">2 bit</th>
+      <th style="text-align: left">1 bit</th>
+      <th style="text-align: left">0 bit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">TIFR0</td>
+      <td style="text-align: left">-</td>
+      <td style="text-align: left">-</td>
+      <td style="text-align: left">-</td>
+      <td style="text-align: left">-</td>
+      <td style="text-align: left">-</td>
+      <td style="text-align: left">OCF0B</td>
+      <td style="text-align: left">OCF0A</td>
+      <td style="text-align: left">TOV0</td>
+    </tr>
+  </tbody>
+</table>
+
+**Bit 2 – OCF0B – Timer/Counter 0 Output Compare B Match Flag**
+- Este bit é colocado em 1 quando o valor da contagem (TCNT0) é igual ao valor do registrador de comparação de saída B (OCR0B) do TC0.
+
+**Bit 1 – OCF0A – Timer/Counter 0 Output Compare A Match Flag**
+- Este bit é colocado em 1 quando o valor da contagem (TCNT0) é igual ao valor do registrador de comparação de saída A (OCR0A) do TC0.
+
+**Bit 0 – TOV0 – Timer/Counter 0 Overflow Flag**
+- Este bit é colocado em 1 quando um estouro do TC0 ocorre.

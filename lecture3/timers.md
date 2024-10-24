@@ -71,8 +71,166 @@ $T_{OCRnA} = (OCRnA+1)/f_{clk} = (OCRnA + 1) * T_{clk}$
 
 ## Registers
 
+<h3 id="timers">Timer/Counter Control n Register A (TCCRnA)</h3>
 - Configurando modo de operação
-![modos](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/modos.png)
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: left">7 bit</th>
+      <th style="text-align: left">6 bit</th>
+      <th style="text-align: left">5 bit</th>
+      <th style="text-align: left">4 bit</th>
+      <th style="text-align: left">3 bit</th>
+      <th style="text-align: left">2 bit</th>
+      <th style="text-align: left">1 bit</th>
+      <th style="text-align: left">0 bit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">TCCR0A</td>
+      <td style="text-align: left">COM0A1</td>
+      <td style="text-align: left">COM0A0</td>
+      <td style="text-align: left">COM0B1</td>
+      <td style="text-align: left">COM0B0</td>
+      <td style="text-align: left">-</td>
+      <td style="text-align: left">-</td>
+      <td style="text-align: left">WGM01</td>
+      <td style="text-align: left">WGM00</td>
+    </tr>
+  </tbody>
+</table>
+
+<table><thead>
+  <tr>
+    <th colspan="3">Modo CTC</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>COM0A1</td>
+    <td>COM0A0</td>
+    <td>Descrição</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>0</td>
+    <td>Operação normal do pino, OC0A desconectado.</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>Mudança do estado de OC0A na igualdade de<br>comparação.</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>0</td>
+    <td>OC0A é limpo na igualdade de comparação.</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>1</td>
+    <td>OC0A é ativo na igualdade de comparação.</td>
+  </tr>
+</tbody>
+</table>
+
+<table><thead>
+  <tr>
+    <th>Modo</th>
+    <th>WGM02</th>
+    <th>WGM01</th>
+    <th>WGM00</th>
+    <th>Modo de <br>Operação <br>TC</th>
+    <th>TOP</th>
+    <th>Atualização <br>de OCR0A</th>
+    <th>Sinalização <br>do bit TOV0</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>Normal</td>
+    <td>0xFF</td>
+    <td>Imediata</td>
+    <td>0xFF</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td>PWM com <br>fase corrigida</td>
+    <td>0xFF</td>
+    <td>0xFF</td>
+    <td>0x00</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>CTC</td>
+    <td>OCR0A</td>
+    <td>Imediata</td>
+    <td>0xFF</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td>
+    <td>PWM rápido</td>
+    <td>0xFF</td>
+    <td>0x00</td>
+    <td>0xFF</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td>
+    <td>Reservado</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>PWM com<br>fase corrigida</td>
+    <td>OCR0A<br></td>
+    <td>OCR0A<br></td>
+    <td>0x00</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>Reservado</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>PWM rápido</td>
+    <td>OCR0A<br></td>
+    <td>0x00</td>
+    <td>OCR0A</td>
+  </tr>
+</tbody>
+</table>
+
+<!-- ![modos](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/modos.png) -->
 
 - Definindo preescaler
 ![pscaler](https://github.com/petrucior/ucontrolador/blob/main/lecture3/midia/registerprescaler.png)

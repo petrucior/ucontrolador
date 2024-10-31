@@ -54,7 +54,6 @@
   </tr>
 </table>
 
-## Registradores
 ## Registers
 
 <h3 id="timers">Timer/Counter Control n Register A (TCCRnA)</h3>

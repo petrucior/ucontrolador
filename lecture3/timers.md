@@ -40,7 +40,7 @@ There are 3 timers/counters
 Modos de Operação
 - Modo normal
   - O TCn conta continuamente de forma crescente;
-  - A contagem se dá de 0 até $(2^{x-1})$ voltando a 0, num ciclo contínuo;
+  - A contagem se dá de 0 até $(2^{x}-1)$ voltando a 0, num ciclo contínuo;
   - O valor da contagem é armazenado no registrador TCNTn;
   - Quando a contagem estoura, o bit sinalizador de estouro (TOVn) é setado para 1. Se habilitada, uma interrupção é gerada (TIMERn OVF)
 

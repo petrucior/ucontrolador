@@ -99,21 +99,21 @@ xxxx_1x0x ^ 0000_1010 ---> xxxx_0x1x
 ```
 - C code sintax (1-bit)
 ```
-REG = REG ^ 0b0000_1000;  // REG = xxxx_0x0x
-REG ^= 0b0000_1000);      // REG = xxxx_0x0x
-REG ^= 0x08;              // REG = xxxx_0x0x
-REG ^= (1 << 3);          // REG = xxxx_0x0x
+REG = REG ^ 0b0000_1000;  // REG = xxxx_~xxxx
+REG ^= 0b0000_1000);      // REG = xxxx_~xxxx
+REG ^= 0x08;              // REG = xxxx_~xxxx
+REG ^= (1 << 3);          // REG = xxxx_~xxxx
 ```
 - 2-bit
 ```
 (1 << 1)                           ---> 0000_0010
 (1 << 3)                           ---> 0000_1000
 (1 << 1) | (1 << 3)                ---> 0000_1010
-xxxx_xxxx ^ ((1 << 1) | (1 << 3))  ---> xxxx_0x1x
+xxxx_xxxx ^ ((1 << 1) | (1 << 3))  ---> xxxx_~xx~xx
 ```
 - C code sintax (2-bit)
 ```
-REG ^= ((1 << 1) | (1 << 3));  // REG = xxxx_0x1x
+REG ^= ((1 << 1) | (1 << 3));  // REG = xxxx_~xx~xx
 ```
 
 Appendix

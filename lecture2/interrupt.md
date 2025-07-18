@@ -1,5 +1,5 @@
 ## Interrupt
-![interruption](https://4.bp.blogspot.com/-vCBigov2SLc/V7YlXikbjaI/AAAAAAAABJY/lRSiYIU59L0rE5-jkhE_w_NfCyecsHuoQCLcB/s1600/Int-fig1.jpg)
+![interruption](midia/interrupcao.jpg)
 
 ![priority](https://i.pinimg.com/736x/42/b1/65/42b16572039efbebca0deb8ff7386c84.jpg)
 

@@ -4,7 +4,6 @@
 
 - Generation of periodic signals/events
 - Event count
-- Capture and compare functions
 
 There are 3 timers/counters
 - 8 bits

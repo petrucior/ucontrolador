@@ -24,7 +24,7 @@
 |     0x04     	|   PCINT1  	| Interrupção 1 por mudança de pino 	| Mudança de estado em qualquer pino da porta C 	|
 |     0x05     	|   PCINT2  	| Interrupção 2 por mudança de pino 	| Mudança de estado em qualquer pino da porta D 	|
 
-![INTs](https://ouilogique.com/files/2016-10-21-interruptions/images/ATmega328-INTx.jpg)
+![INTs](https://baremetalmicro.com/assets/tutorial_avr_digital_io/external_int_pins.png)
 
 <h3 id="external-interrupt-control-register-a">External Interrupt Control Register A (EICRA)</h3>
 <h4> Configuração das interrupções externas INT0 e INT1 </h4>

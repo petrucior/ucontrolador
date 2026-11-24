@@ -9,7 +9,7 @@ sudo apt update && sudo apt install gcc-avr binutils-avr avr-libc gdb-avr avrdud
 ```
 ### Serial Port ID
 
-/dev/ttyUSB0 or /dev/ttyACM0
+``` /dev/ttyUSB0``` or ```/dev/ttyACM0```
 
 ```
 ls /dev/tty*
